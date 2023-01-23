@@ -1,0 +1,83 @@
+﻿@model NewsPortal.Models.News
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@Model.Title</title>
+</head>
+<body>
+    <div class="container-fluid bg-light">
+        <!--Üst Kısım-->
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Haber Portalı</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Index" asp-controller="Home">Ana Sayfa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dünya</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Türkiye</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">İş</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Teknoloji</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Bilim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Spor</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--Üst Kısım-->
+        <!--Başlık-->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mt-3 mb-3">@Model.Title</h1>
+            </div>
+        </div>
+        <!--Başlık-->
+        <!--İçerikler-->
+        <div class="row">
+            <div class="col-md-8">
+                <img src="@Model.Image" class="img-fluid mx-auto d-block mb-3" alt="Article Image" style="border: solid 5px #ccc; width: 60%; height: auto;">
+                <p class="serif">@Model.Content</p>
+            </div>
+            <div class="col-md-4">
+                <p class="text-center mt-3 mb-3">@Model.Description</p>
+                <p class="text-center">Kategori: @Model.Category</p>
+            </div>
+        </div>
+        <!--İçerikler-->
+        <!--Footer-->
+        <div class="row">
+            <div class="col-md-12">
+                <footer>
+                    <p class="text-center">Copyright © 2023 Haber Portal</p>
+                </footer>
+            </div>
+        </div>
+        <!--Footer-->
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+﻿@{
+	Layout = null;
+}
+@model NewsPortal.Models.News
+<h1>Haber Güncelle</h1>
+
+<div>
+    <form asp-action="Edit" asp-controller="NewsEdit" method="post" name="myForm" onsubmit="return validateForm()">
+		<input type="hidden" asp-for="@Model.Id" />
+       <div class="form-group">
+                  <label for="Title">Başlık:</label>
+                <input class="form-control mx-auto" placeholder="Başlık" type="text" asp-for="Title" id="Title" />
+        </div>
+              <div class="form-group">
+               <label for="Category">Kategori:</label>
+                <input class="form-control mx-auto" placeholder="Kategori" type="text" asp-for="Category" id="Category" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Açıklama:</label>
+                <textarea class="form-control mx-auto" placeholder="Açıklama" asp-for="Description" id="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Content">İçerik:</label>
+                <textarea class="form-control mx-auto" placeholder="İçerik" asp-for="Content" id="Content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Image">Resim URL:</label>
+                <input class="form-control mx-auto" placeholder="Resim URL" type="text" asp-for="Image" id="Image" />
+        </div>
+		<button type="submit">Haber Güncelle</button>
+	</form>
+</div>
+
+        <script>
+    function validateForm() {
+        var title = document.forms["myForm"]["Title"].value;
+        var category = document.forms["myForm"]["Category"].value;
+        var description = document.forms["myForm"]["Description"].value;
+        var content = document.forms["myForm"]["Content"].value;
+        var image = document.forms["myForm"]["Image"].value;
+        if (title == "" || category == "" || description == "" || content == "" || image == "") {
+            alert("Tüm alanları doldurunuz.");
+            return false;
+        }
+    }
+</script>

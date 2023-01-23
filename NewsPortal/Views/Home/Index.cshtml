@@ -1,0 +1,19 @@
+﻿@model NewsPortal.Models.ViewModels.NewscastListViewModel
+
+<div class="container">
+    <div class="row" >
+        @foreach(var news in Model.Newscast)
+        {
+            <partial name="NewsSummary" model="news"></partial> <!--Burada NewsSummary partialviewsi kullanıldı-->
+        }
+    </div>
+</div>
+<!--Alt kısım diğer ögelere erişecek butonları sağlıyor. Sayfa değiştirme butonu-->
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" page-url-category="Model.CurrentCategory"
+     class="btn-group pull-right m-1">
+</div>
+
+
+

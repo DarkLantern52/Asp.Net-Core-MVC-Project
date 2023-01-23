@@ -1,0 +1,43 @@
+﻿@page "/admin"
+@using NewsPortal.Models
+@using NewsPortal.Models.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IPortalRepository repository
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div>
+    <h3 class="text-center">Tüm Haberler</h3>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-danger btn-sm float-right">Çıkış</a>
+</div>
+
+<a asp-action="Create" asp-controller="NewsEdit" class="btn btn-info btn-sm">Yeni Haber Ekle</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Kategori</th>
+            <th>Açıklama</th>
+            <th>İçerik</th>
+            <th>Resim URL</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var news in repository.Newscast)
+        {
+            <tr>
+                <td>@news.Title</td>
+                <td>@news.Category</td>
+                <td>@news.Description</td>
+                <td>@news.Content</td>
+                <td>@news.Image</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="NewsEdit" asp-route-id="@news.Id" class="btn btn-secondary btn-sm">Düzenle</a>
+                    <a asp-action="Delete" asp-controller="NewsEdit" asp-route-id="@news.Id" class="btn btn-warning btn-sm">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,33 @@
+﻿<!--
+    _Layout.cshtml dosyası, proje içindeki tüm görünümler için kullanılacak olan ortak bir şablonu (layout) içerir.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haber Portalı</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <!--Üst Kısım-->
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">Haber Portalı</span>
+        <vc:navigation-menu /> <!--NavigationMenu klasöründeki Default.cshtml çağrıldı.-->
+        <a type="button" class="btn btn-primary float-right" asp-action="Login" asp-controller="Account">Admin Giriş</a>
+    </div>
+    <!--Üst Kısım-->l
+    <!--Ana içerik-->
+    <div class="mx-auto text-center">
+    @await Component.InvokeAsync("Slider")
+    </div>l
+    <div class="row">
+        <div class="col-9" style="text-align:center">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!--Ana içerik-->
+</body>
+</html>

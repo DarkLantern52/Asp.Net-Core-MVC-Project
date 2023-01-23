@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Bu dosya, Web projenizin yayımlama/paket işlemi tarafından kullanılıyor. MSBuild dosyasını düzenleyerek
+bu işlemin davranışını düzenleyebilirsiniz. Bununla ilgili daha fazla bilgi edinmek için https://go.microsoft.com/fwlink/?LinkID=208121 adresini ziyaret edin. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAa7MgDOVTm02k+hEY4THGUAAAAAACAAAAAAAQZgAAAAEAACAAAAAMqcpy5UHeZI2IYc7G5z59zPSGXRJtP2WzPJmDhJc0UgAAAAAOgAAAAAIAACAAAACFBvNmYQE1PmSqno00fG2J0Y6t8ZpQ+1TFPqWPIrGjhYAAAACPEJ0PgYwAa80a+z2LDTUtjp0ZDlwCWCx7QvGxdsGE7CugFiLdx/JCX/ErLhn1SsPEKi/hSDqa/kdWZj454KZu7hfB0IgOHF1e8kTdGY54Z4LtCagnsewd0aQBopXtLeu0/I8ZbEdLVV2b0zRd5m9nO1gllp+OvnJL+vh/NtrPqEAAAABjAQA3CzbBLI9oFDqRcTcSJOqEu6x/m9EsiNfpq8pyofNyDsEXGlAyY6042PNsCJkLQztUCMF2nzYA0QZR0Z/T</EncryptedPassword>
+    <History>True|2023-01-21T19:11:13.4465289Z;True|2023-01-21T21:32:05.8836473+03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,51 @@
+﻿@model News
+<!--Bu sayfa Index.cshtml sayfasından çağrılan bir partialviewsdır.-->
+<style>
+.card-img-top {
+    width: 350px;
+    height: 250px;
+    object-fit: cover; /* resimlerin kart boyutunu aşmaması için */
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
+
+<div class="col-md-4">
+    <div class="card">    
+        <img class="card-img-top" src="@Model.Image" alt="image">
+        <div class="card-body">
+            <span class="badge badge-pill badge-primary" style="float:right">
+                <small>@Model.Category</small>
+            </span>
+            <h5 class="card-title">
+                @Model.Title
+            </h5>
+            <p class="card-text">
+                @Model.Description
+            </p>
+            <form method="get" asp-action="NewsInfo" asp-route-id="@Model.Id">
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <input type="hidden" asp-for="Id" />
+                <span class="card-text p-1">
+                    <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
+                        Gözat
+                    </button>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>
+          
+           
+           
+
+            
+
+
+
+       
+     
+   
+

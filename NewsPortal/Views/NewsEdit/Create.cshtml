@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+@model NewsPortal.Models.News
+
+<body class="bg-light">
+    <div class="container d-flex justify-content-center">
+    <h3 class="text-center my-5">Ekleme sayfası</h3>
+  <form asp-action="Create" asp-controller="NewsEdit" method="post" class="form-group" name="myForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="Title">Başlık:</label>
+                <input class="form-control mx-auto" placeholder="Başlık" type="text" asp-for="Title" id="Title" />
+        </div>
+        <div class="form-group">
+            <label for="Category">Kategori:</label>
+                <input class="form-control mx-auto" placeholder="Kategori" type="text" asp-for="Category" id="Category" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Açıklama:</label>
+                <textarea class="form-control mx-auto" placeholder="Açıklama" asp-for="Description" id="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Content">İçerik:</label>
+                <textarea class="form-control mx-auto" placeholder="İçerik" asp-for="Content" id="Content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Image">Resim URL:</label>
+                <input class="form-control mx-auto" placeholder="Resim URL" type="text" asp-for="Image" id="Image" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success btn-block">Ekle</button>
+        </div>
+    </form>
+</div>
+</body>
+
+<script>
+    function validateForm() {
+        var title = document.forms["myForm"]["Title"].value;
+        var category = document.forms["myForm"]["Category"].value;
+        var description = document.forms["myForm"]["Description"].value;
+        var content = document.forms["myForm"]["Content"].value;
+        var image = document.forms["myForm"]["Image"].value;
+        if (title == "" || category == "" || description == "" || content == "" || image == "") {
+            alert("Tüm alanları doldurunuz.");
+            return false;
+        }
+    }
+</script>
